@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="description" content="Orbit Analytics — a premium dark analytics dashboard concept with animated charts, glassmorphism panels and live-feeling metrics." />
+<meta name="theme-color" content="#070512" />
+<title>Orbit Analytics — Premium Data Dashboard</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to main content</a>
+<div class="aurora" aria-hidden="true">
+  <span class="orb orb-a"></span>
+  <span class="orb orb-b"></span>
+  <span class="orb orb-c"></span>
+  <span class="grid-veil"></span>
+</div>
+
+<div class="app">
+  <!-- ============ SIDEBAR ============ -->
+  <aside class="sidebar glass" id="sidebar" aria-label="Main navigation">
+    <div class="brand">
+      <span class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 40 40" role="img" aria-hidden="true">
+          <defs>
+            <linearGradient id="bg1" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#a78bfa" />
+              <stop offset="1" stop-color="#22d3ee" />
+            </linearGradient>
+          </defs>
+          <circle cx="20" cy="20" r="9" fill="none" stroke="url(#bg1)" stroke-width="3" />
+          <ellipse cx="20" cy="20" rx="17" ry="7" fill="none" stroke="url(#bg1)" stroke-width="2" opacity=".7" transform="rotate(-24 20 20)" />
+          <circle cx="33" cy="13" r="3" fill="#22d3ee" />
+        </svg>
+      </span>
+      <span class="brand-text">
+        <strong>Orbit</strong>
+        <small>Analytics Cloud</small>
+      </span>
+      <button class="icon-btn close-nav" id="closeNav" type="button" aria-label="Close navigation">&#10005;</button>
+    </div>
+
+    <nav class="nav" aria-label="Sections">
+      <p class="nav-label">Workspace</p>
+      <a class="nav-item is-active" href="#overview" aria-current="page"><span class="ico" aria-hidden="true">&#9679;</span>Overview</a>
+      <a class="nav-item" href="#metrics"><span class="ico" aria-hidden="true">&#9650;</span>Live Metrics</a>
+      <a class="nav-item" href="#trend"><span class="ico" aria-hidden="true">&#8767;</span>Trend Engine</a>
+      <a class="nav-item" href="#channels"><span class="ico" aria-hidden="true">&#9636;</span>Channels</a>
+      <a class="nav-item" href="#reports"><span class="ico" aria-hidden="true">&#9635;</span>Reports</a>
+    </nav>
+
+    <div class="upsell glass-soft">
+      <p class="upsell-title">Orbit Pro</p>
+      <p class="upsell-copy">Unlock cohort retention, anomaly alerts and unlimited data sources.</p>
+      <button class="btn btn-sm" type="button" data-demo>Upgrade plan</button>
+    </div>
+
+    <div class="sidebar-foot">
+      <img class="avatar" src="data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='a' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%23a78bfa'/%3E%3Cstop offset='1' stop-color='%2322d3ee'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='64' height='64' rx='18' fill='%23120f24'/%3E%3Ccircle cx='32' cy='25' r='11' fill='url(%23a)'/%3E%3Cpath d='M10 60c3-12 12-18 22-18s19 6 22 18z' fill='url(%23a)'/%3E%3C/svg%3E" alt="Ava Rehman, workspace owner" width="34" height="34" />
+      <span class="who"><strong>Ava Rehman</strong><small>Owner · Orbit Labs</small></span>
+    </div>
+  </aside>
+  <div class="scrim" id="scrim" hidden></div>
+
+  <!-- ============ MAIN ============ -->
+  <main class="main" id="main">
+    <header class="topbar glass">
+      <button class="icon-btn burger" id="openNav" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="sidebar">&#9776;</button>
+      <div class="search">
+        <span class="search-ico" aria-hidden="true">&#9906;</span>
+        <input id="search" type="search" placeholder="Search metrics, cohorts, segments..." aria-label="Search metrics" />
+      </div>
+      <div class="top-actions">
+        <span class="pill live-pill" id="livePill"><span class="dot" aria-hidden="true"></span>Live</span>
+        <button class="icon-btn" type="button" aria-label="Notifications" data-demo>&#9787;</button>
+        <button class="icon-btn" type="button" aria-label="Toggle theme" id="themeBtn">&#9789;</button>
+      </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero" id="overview" aria-labelledby="heroTitle">
+      <p class="eyebrow">Q3 · Growth intelligence</p>
+      <h1 id="heroTitle" class="hero-title">Signal, <span class="grad">not noise.</span></h1>
+      <p class="hero-sub">One dark, calm surface for revenue, retention and reach. Animated charts, zero clutter, and metrics that actually move.</p>
+      <div class="hero-cta">
+        <button class="btn" type="button" id="replayBtn">Replay animation</button>
+        <button class="btn btn-ghost" type="button" data-demo>Connect a source</button>
+      </div>
+      <dl class="hero-strip glass" role="list">
+        <div role="listitem"><dt>Uptime</dt><dd data-count="99.98" data-suffix="%" data-decimals="2">0%</dd></div>
+        <div role="listitem"><dt>Events / day</dt><dd data-count="42.7" data-suffix="M" data-decimals="1">0M</dd></div>
+        <div role="listitem"><dt>Sources</dt><dd data-count="18" data-suffix="">0</dd></div>
+      </dl>
+    </section>
+
+    <!-- KPI cards -->
+    <section class="kpis" id="metrics" aria-labelledby="kpiTitle">
+      <h2 class="sr-only" id="kpiTitle">Key performance indicators</h2>
+      <article class="card glass kpi" tabindex="0">
+        <p class="kpi-label">Monthly revenue</p>
+        <p class="kpi-value">$<span data-count="284.6" data-decimals="1">0</span>K</p>
+        <p class="kpi-delta up">&#9650; 12.4% vs last month</p>
+        <div class="spark" data-spark="up" aria-hidden="true"></div>
+      </article>
+      <article class="card glass kpi" tabindex="0">
+        <p class="kpi-label">Active users</p>
+        <p class="kpi-value"><span data-count="9.42" data-decimals="2">0</span>K</p>
+        <p class="kpi-delta up">&#9650; 8.1% vs last month</p>
+        <div class="spark" data-spark="up" aria-hidden="true"></div>
+      </article>
+      <article class="card glass kpi" tabindex="0">
+        <p class="kpi-label">Churn rate</p>
+        <p class="kpi-value"><span data-count="1.27" data-decimals="2">0</span>%</p>
+        <p class="kpi-delta down">&#9660; 0.4% vs last month</p>
+        <div class="spark" data-spark="down" aria-hidden="true"></div>
+      </article>
+      <article class="card glass kpi" tabindex="0">
+        <p class="kpi-label">Avg. session</p>
+        <p class="kpi-value"><span data-count="7.9" data-decimals="1">0</span>m</p>
+        <p class="kpi-delta up">&#9650; 3.6% vs last month</p>
+        <div class="spark" data-spark="up" aria-hidden="true"></div>
+      </article>
+    </section>
+
+    <!-- Chart row -->
+    <section class="grid-2" id="trend">
+      <article class="card glass panel" aria-labelledby="trendTitle">
+        <header class="panel-head">
+          <div>
+            <h2 id="trendTitle">Trend engine</h2>
+            <p class="panel-sub">Sessions vs. conversions, rolling window</p>
+          </div>
+          <div class="seg" role="group" aria-label="Time range">
+            <button class="seg-btn is-active" data-range="7" type="button">7D</button>
+            <button class="seg-btn" data-range="30" type="button">30D</button>
+            <button class="seg-btn" data-range="90" type="button">90D</button>
+          </div>
+        </header>
+        <div class="chart-wrap">
+          <canvas id="lineChart" height="260" role="img" aria-label="Line chart of sessions and conversions over the selected range"></canvas>
+        </div>
+        <ul class="legend" role="list">
+          <li><span class="sw sw-a" aria-hidden="true"></span>Sessions</li>
+          <li><span class="sw sw-b" aria-hidden="true"></span>Conversions</li>
+        </ul>
+      </article>
+
+      <article class="card glass panel" aria-labelledby="mixTitle">
+        <header class="panel-head">
+          <div>
+            <h2 id="mixTitle">Acquisition mix</h2>
+            <p class="panel-sub">Share of new signups</p>
+          </div>
+        </header>
+        <div class="donut-wrap">
+          <canvas id="donutChart" height="240" role="img" aria-label="Donut chart of acquisition channels"></canvas>
+          <div class="donut-center">
+            <strong data-count="12.4" data-decimals="1">0</strong><span>K new</span>
+          </div>
+        </div>
+        <ul class="mix-list" role="list">
+          <li><span class="sw sw-a" aria-hidden="true"></span>Organic <b>38%</b></li>
+          <li><span class="sw sw-b" aria-hidden="true"></span>Paid <b>27%</b></li>
+          <li><span class="sw sw-c" aria-hidden="true"></span>Referral <b>21%</b></li>
+          <li><span class="sw sw-d" aria-hidden="true"></span>Social <b>14%</b></li>
+        </ul>
+      </article>
+    </section>
+
+    <!-- Channels -->
+    <section class="card glass panel" id="channels" aria-labelledby="chTitle">
+      <header class="panel-head">
+        <div>
+          <h2 id="chTitle">Channel performance</h2>
+          <p class="panel-sub">Conversion rate by source, last 30 days</p>
+        </div>
+        <button class="btn btn-ghost btn-sm" type="button" data-demo>Export CSV</button>
+      </header>
+      <ul class="bars" role="list">
+        <li><span class="bar-label">Organic search</span><span class="bar"><i style="--v:86%"></i></span><b>8.6%</b></li>
+        <li><span class="bar-label">Product-led referral</span><span class="bar"><i style="--v:71%"></i></span><b>7.1%</b></li>
+        <li><span class="bar-label">Paid social</span><span class="bar"><i style="--v:54%"></i></span><b>5.4%</b></li>
+        <li><span class="bar-label">Email lifecycle</span><span class="bar"><i style="--v:43%"></i></span><b>4.3%</b></li>
+        <li><span class="bar-label">Partner network</span><span class="bar"><i style="--v:29%"></i></span><b>2.9%</b></li>
+      </ul>
+    </section>
+
+    <!-- Reports -->
+    <section class="grid-3" id="reports" aria-labelledby="repTitle">
+      <h2 class="sr-only" id="repTitle">Saved reports</h2>
+      <article class="card glass mini" tabindex="0">
+        <span class="mini-ico" aria-hidden="true">&#9635;</span>
+        <h3>Weekly digest</h3>
+        <p>Auto-mailed every Monday at 08:00 with the five metrics that moved most.</p>
+        <span class="tag">Enabled</span>
+      </article>
+      <article class="card glass mini" tabindex="0">
+        <span class="mini-ico" aria-hidden="true">&#9888;</span>
+        <h3>Anomaly watch</h3>
+        <p>Flags any metric drifting more than two standard deviations from baseline.</p>
+        <span class="tag tag-warn">3 open</span>
+      </article>
+      <article class="card glass mini" tabindex="0">
+        <span class="mini-ico" aria-hidden="true">&#8644;</span>
+        <h3>Cohort explorer</h3>
+        <p>Slice retention by plan, region or signup week and share a read-only link.</p>
+        <span class="tag tag-mut">Pro</span>
+      </article>
+    </section>
+
+    <footer class="foot">
+      <p>Orbit Analytics · demo data, no backend · built with vanilla HTML, CSS and JS.</p>
+    </footer>
+  </main>
+</div>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<script src="js/main.js"></script>
+</body>
+</html>
